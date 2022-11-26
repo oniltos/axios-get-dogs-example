@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
+import AllBreedsPage from './pages/AllBreedsPage'
+import BreedPhotosPage from './pages/BreedPhotosPage'
+
+//1 página listando todas as raças disponíveis na API
+//1 Botão para ver fotos de uma raça
+//1 página contendo fotos de uma raça específica
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/' element={ <AllBreedsPage />} />
+        <Route path='/breeds/:breedName' element={<BreedPhotosPage /> } />
+      </Routes>
     </div>
   );
 }
